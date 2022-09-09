@@ -1,0 +1,11 @@
+Data/
+align.py
+*.png
+analyse.py
+*.out
+get_min.py
+test_tmap.py
+tmap.py
+visualize.py
+vocab*
+randomfiles/
