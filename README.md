@@ -42,7 +42,9 @@ $ pip install tueplots
 $ pip install jupyter
 
 ## Usage
-There are two main options for using the SMILES corrector; use a previously trained model (step 4) or train a new model 
+There are two main options for using the SMILES corrector; use a previously trained model (step 4) or train a new model.
+
+The files for reuse can be found on: https://zenodo.org/record/7157412#.Y1edr3ZBxD8
 
 To train a new model follow example in test.py to perform the following steps
 
