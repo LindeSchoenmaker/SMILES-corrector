@@ -15,7 +15,7 @@ from src.modelling import initialize_model, train_model, correct_SMILES
 def ArgParser():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     
-    parser.add_argument('-i', '--folder_raw', type=str, default='RawData/',
+    parser.add_argument('-r', '--folder_raw', type=str, default='RawData/',
                         help="Directory containing input files data_source & gdb8.csv")
     parser.add_argument('-o', '--folder_out', type=str, default='Data/',
                         help="Directory for saving output files")
@@ -32,6 +32,8 @@ def ArgParser():
                         help="Batch size")
     parser.add_argument('-type', '--invalid_type', type=str, default='all',
                         help='type of error to introduce, ["all", "exists", "par", "permut", "ring", "syntax", "valence", "arom"] for num_errors = 1 & "multiple" for num_errors > 1')
+    parser.add_argument('-train', '--training', action='store_true',
+                        help='If on, corrector is trained')
     parser.add_argument('-fix', '--fixing', action='store_true',
                         help='If on, model is loaded and used for fixing SMILES from error_source')
     parser.add_argument('-gpu', '--gpu', type=str, default='1',
@@ -59,7 +61,7 @@ if __name__ == "__main__":
     num_errors = args.num_errors
 
     # set random seed, used for error generation & initiation transformer
-    SEED = args.ran
+    SEED = args.random_state
     random.seed(SEED)
 
     # create standardized dataset if not already present
